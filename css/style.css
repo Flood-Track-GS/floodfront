@@ -121,3 +121,7 @@ footer {
 .imagem-secao:hover {
   transform: scale(1.02);
 }
+
+section {
+  text-align: center;
+}
