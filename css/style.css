@@ -1,23 +1,36 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+/* Reset básico */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.alerta {
-  background: #d7263d;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
+:root {
+  --bg-color: #f4f4f4;
+  --primary: #0d0d0d;
+  --secondary: #d7263d;
+  --text: #333;
+  --highlight: #1e90ff;
+  --section-bg: #ffffff;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Cabeçalho e menu */
+header {
+  background-color: var(--primary);
+  padding: 1rem;
 }
 
 .logo-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #0d0d0d;
-  padding: 1rem;
 }
 
 .logo {
@@ -25,33 +38,68 @@ body {
 }
 
 nav ul {
-  list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  list-style: none;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
+nav a:hover,
+nav a:focus {
+  color: var(--highlight);
+}
+
+/* Seções */
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   padding: 2rem;
+}
+
+section {
+  background: var(--section-bg);
+  border-left: 5px solid var(--secondary);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+section h2 {
+  color: var(--highlight);
+  margin-bottom: 1rem;
+}
+
+section p {
+  max-width: 600px;
+  margin: 0 auto 1rem;
   text-align: center;
 }
 
+/* Rodapé */
 footer {
-  background: #111;
+  background-color: var(--primary);
   color: #ccc;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
 }
 
-.lista-abrigos, .dicas {
-  text-align: left;
-  margin: auto;
-  max-width: 600px;
-  line-height: 2;
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .logo-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
