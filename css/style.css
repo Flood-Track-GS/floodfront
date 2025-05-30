@@ -103,3 +103,21 @@ footer {
     gap: 1rem;
   }
 }
+
+/* Estilo para as imagens */
+.imagem-secao {
+  max-width: 500px;      
+  max-height: 300px;    
+  width: 100%;           
+  height: auto;
+  margin: 1.5rem auto 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imagem-secao:hover {
+  transform: scale(1.02);
+}
